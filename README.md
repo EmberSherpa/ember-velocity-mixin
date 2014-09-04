@@ -1,4 +1,4 @@
-# Ember-velocity-mixin
+# Ember Velocity View Mixin
 
 This README outlines the details of collaborating on this Ember addon.
 
