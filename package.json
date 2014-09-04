@@ -1,6 +1,6 @@
 {
   "name": "ember-velocity-mixin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "directories": {
     "doc": "doc",
     "test": "test"
@@ -10,7 +10,7 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/stefanpenner/ember-cli",
+  "repository": "git@github.com:quandl/ember-velocity-mixin.git",
   "engines": {
     "node": ">= 0.10.0"
   },
