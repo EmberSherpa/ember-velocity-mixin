@@ -9,13 +9,14 @@ test('velocity methods are available', function(){
   ok(component.animate);
 });
 
-test('ensureElement returns an element', function() {
+test('getDOMElement returns an element', function() {
   var component = this.subject();
   var view = this.subject({
     template: Ember.Handlebars.compile('just a simple template')
   });
   this.append();
-  ok(component.ensureElement(view) instanceof $);
+  /* global Element */
+  ok(component.getDOMElement(view) instanceof Element);
 });
 
 test('animate returns a promise', function() {

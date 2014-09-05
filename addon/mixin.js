@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 /* global jQuery */
+/*jshint unused:false */
 var $ = jQuery;
 
 Ember.assert("Velocity.js must be installed to use this mixin.", $.Velocity);
@@ -19,13 +20,17 @@ export default Ember.Mixin.create({
    * @returns {*}
    */
   css: function(property, value) {
-    var element = this.$();
-    if (arguments.length >= 2){
+    var args = [].slice.call(arguments, 0);
+    if (!this._checkElement(args[0])) {
+      // the first argument is not an element, get current view's element
+      args.unshift(this.$());
+    }
+    if (arguments.length > 2){
       // setting
-      this.setCSSPropertyValue(element, property, value);
+      this.setCSSPropertyValue.apply(this, args);
     } else {
       // getting
-      return this.getCSSPropertyValue(element, property);
+      return this.getCSSPropertyValue.apply(this, args);
     }
   },
   /**
@@ -35,45 +40,56 @@ export default Ember.Mixin.create({
    */
   animate: function(element) {
     var args;
-    if (element instanceof Ember.View || element instanceof $) {
+    if (this._checkElement(element)) {
       args = [].slice.call(arguments, 1);
     } else {
       args = [].slice.call(arguments, 0);
       element = this.$();
     }
-    element = this.ensureElement(element);
-    args.unshift(element);
+    args.unshift(this.getDOMElement(element));
     return $.Velocity.animate.apply(null, args);
   },
   /**
    * Get CSS value for a property
-   * @param {Ember.View|$) element
+   * @param {Ember.View|jQuery) element
    * @param {string} property
    * @returns {*}
    */
   getCSSPropertyValue: function(element, property) {
-    return $.Velocity.CSS.getPropertyValue(this.ensureElement(element), property);
+    return $.Velocity.CSS.getPropertyValue(this.getDOMElement(element), property);
   },
   /**
    * Set CSS for a property
-   * @param {Ember.View|$) element
+   * @param {Ember.View|jQuery) element
    * @param {string} property
    * @param {string} value
    * @returns {*}
    */
   setCSSPropertyValue: function(element, property, value) {
-    return $.Velocity.CSS.setPropertyValue(this.ensureElement(element), property, value);
+    return $.Velocity.CSS.setPropertyValue(this.getDOMElement(element), property, value);
   },
   /**
    * Ensures that passes element is a jQuery element. When a view is passes, the element is returned.
-   * @param element
+   * @param {undefined|Ember.View|JQuery} element
    * @returns {*}
    */
-  ensureElement: function(element) {
-    Ember.assert('element must be an Ember.View or jQuery element', element instanceof Ember.View || element instanceof $);
+  getDOMElement: function(element) {
+    Ember.assert('element must be an Ember.View or jQuery element', this._checkElement(element));
     if (element instanceof Ember.View) {
       element = element.$();
     }
+    if (element instanceof $) {
+      element = element[0];
+    }
     return element;
+  },
+  /**
+   * Check if element is an Ember View or jQuery Element
+   * @param element
+   * @returns {boolean}
+   * @private
+   */
+  _checkElement: function(element) {
+    return element instanceof Ember.View || element instanceof $;
   }
 });
