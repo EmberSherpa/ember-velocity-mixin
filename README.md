@@ -5,7 +5,7 @@ Velocity Mixin makes it easier to use [Velocity.js](http://julian.com/research/v
 ## How to use
 
 ```javascript
-import VelocityMixin from 'ember-velocity-mixin/mixin';
+import VelocityMixin from 'ember-velocity-mixin/main';
 
 export default Ember.Component.extend(VelocityMixin, {
   width: '100px',
