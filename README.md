@@ -28,7 +28,7 @@ export default Ember.Component.extend({
     collapse: function() {
       var _this = this;
       this.animate({ width: 0 }).then(function(){
-        this.set('isCollapsed', true);
+        _this.set('isCollapsed', true);
       });
     }
   }
