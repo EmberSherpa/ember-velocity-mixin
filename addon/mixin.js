@@ -25,7 +25,7 @@ export default Ember.Mixin.create({
       // the first argument is not an element, get current view's element
       args.unshift(this.$());
     }
-    if (arguments.length > 2){
+    if (args.length > 2){
       // setting
       this.setCSSPropertyValue.apply(this, args);
     } else {
