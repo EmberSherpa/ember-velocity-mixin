@@ -4,6 +4,8 @@ Velocity Mixin makes it easier to use [Velocity.js](http://julian.com/research/v
 
 ## How to use
 
+### Setting inline styles
+
 ```javascript
 import VelocityMixin from 'ember-velocity-mixin/main';
 
@@ -16,6 +18,23 @@ export default Ember.Component.extend(VelocityMixin, {
 
 ```
 
+### Animation with Promises
+
+```javascript
+import VelocityMixin from 'ember-velocity-mixin/main';
+
+export default Ember.Component.extend({
+  actions: {
+    collapse: function() {
+      var _this = this;
+      this.animate({ width: 0 }).then(function(){
+        this.set('isCollapsed', true);
+      });
+    }
+  }
+});
+```
+
 ## API
 
 ### css([element], property, [value])
@@ -25,7 +44,8 @@ similar to jQuery's css function but it's scoped to View's element and provides 
 
 ### animate([element], options)
 
-```animate``` method allows you to execute Velocity animation on current view or a given element. It accepts the same arguments as jQuery animation function.
+```animate``` method allows you to execute Velocity animation on current view or a given element. It accepts the same arguments as jQuery animation function. 
+This method returns a promise. Learn more about [Promises with Velocity](http://julian.com/research/velocity/#promises). 
 
 ## Installation
 
