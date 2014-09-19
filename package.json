@@ -34,6 +34,6 @@
     "glob": "^4.0.5"
   },
   "dependencies": {
-    "ember-cli-velocity": "^0.1.1"
+    "ember-cli-velocity": "^0.1.2"
   }
 }
