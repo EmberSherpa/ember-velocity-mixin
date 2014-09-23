@@ -10,7 +10,7 @@
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "git@github.com:quandl/ember-velocity-mixin.git",
+  "repository": "https://github.com/quandl/ember-velocity-mixin.git",
   "engines": {
     "node": ">= 0.10.0"
   },

@@ -49,9 +49,7 @@ This method returns a promise. Learn more about [Promises with Velocity](http://
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+* `npm install ember-velocity-mixin --save`
 
 ## Running Tests
 
