@@ -1,6 +1,6 @@
 {
   "name": "ember-velocity-mixin",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "directories": {
     "doc": "doc",
     "test": "test"
@@ -34,6 +34,6 @@
     "glob": "^4.0.5"
   },
   "dependencies": {
-    "ember-cli-velocity": "^0.1.2"
+    "ember-cli-velocity": "^0.2.1"
   }
 }
