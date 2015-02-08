@@ -12,7 +12,7 @@ test('velocity methods are available', function(){
 test('getDOMElement returns an element', function() {
   var component = this.subject();
   var view = this.subject({
-    template: Ember.Handlebars.compile('just a simple template')
+    template: Ember.HTMLBars.compile('just a simple template')
   });
   this.append();
   /* global Element */

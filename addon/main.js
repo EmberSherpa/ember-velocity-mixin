@@ -4,7 +4,7 @@ import Ember from 'ember';
 /*jshint unused:false */
 var $ = jQuery;
 
-Ember.assert("Velocity.js must be installed to use this mixin.", $.Velocity);
+Ember.assert("Velocity.js must be installed to use this mixin.", $.Velocity != null);
 
 $.Velocity.Promise = Ember.RSVP.Promise;
 
