@@ -1,4 +1,4 @@
-# Ember Velocity View Mixin
+# ember-velocity-mixin [![Build Status](https://travis-ci.org/embersherpa/ember-velocity-mixin.svg)](https://travis-ci.org/embersherpa/ember-velocity-mixin)
 
 Velocity Mixin makes it easier to use [Velocity.js](http://julian.com/research/velocity/) in Ember views and components.
 
