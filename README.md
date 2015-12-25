@@ -1,7 +1,7 @@
 ember-velocity-mixin
 ======================
 
-[![Build Status](https://travis-ci.org/embersherpa/ember-velocity-mixin.svg)](https://travis-ci.org/embersherpa/ember-velocity-mixin)
+[![Build Status](https://travis-ci.org/EmberSherpa/ember-velocity-mixin.svg)](https://travis-ci.org/EmberSherpa/ember-velocity-mixin)
 
 The Velocity Mixin makes it easier to use [Velocity.js](http://julian.com/research/velocity/) in your components.
 
