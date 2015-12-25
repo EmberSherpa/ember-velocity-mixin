@@ -12,7 +12,7 @@
   },
   "repository": "https://github.com/embersherpa/ember-velocity-mixin.git",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4.2.4"
   },
   "keywords": [
     "ember-addon",
@@ -28,13 +28,26 @@
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
-  "author": "",
+  "author": {
+    "name": "Taras Mankovski",
+    "email": "taras@embersherpa.com"
+  },
+  "contributors": [
+    {
+      "name": "Taras Mankovski",
+      "email": "taras@embersherpa.com"
+    },
+    {
+      "name": "Chris Thoburn",
+      "email": "runspired@gmail.com"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
+    "broccoli-asset-rev": "^2.2.0",
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-static-compiler": "^0.2.1",
     "broccoli-unwatched-tree": "^0.1.1",
-    "broccoli-asset-rev": "^2.2.0",
     "ember-cli": "1.13.13",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-content-security-policy": "0.4.0",
@@ -46,11 +59,12 @@
     "ember-cli-qunit": "^1.0.4",
     "ember-cli-release": "0.2.8",
     "ember-cli-sri": "^1.2.0",
+    "ember-cli-toolbelts": "0.2.5",
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "1.13.15",
+    "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
-    "ember-disable-prototype-extensions": "^1.0.0",
     "ember-try": "~0.0.8",
     "express": "^4.8.5",
     "glob": "^4.0.5"
