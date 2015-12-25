@@ -1,35 +1,49 @@
-# ember-velocity-mixin [![Build Status](https://travis-ci.org/embersherpa/ember-velocity-mixin.svg)](https://travis-ci.org/embersherpa/ember-velocity-mixin)
+ember-velocity-mixin
+======================
 
-Velocity Mixin makes it easier to use [Velocity.js](http://julian.com/research/velocity/) in Ember views and components.
+[![Build Status](https://travis-ci.org/embersherpa/ember-velocity-mixin.svg)](https://travis-ci.org/embersherpa/ember-velocity-mixin)
 
-## How to use
+The Velocity Mixin makes it easier to use [Velocity.js](http://julian.com/research/velocity/) in your components.
+
+## Usage
+
+`ember install ember-velocity-mixin`
 
 ### Setting inline styles
 
-```javascript
+```js
 import VelocityMixin from 'ember-velocity-mixin/main';
+import Ember from 'ember';
 
-export default Ember.Component.extend(VelocityMixin, {
+const {
+  Component,
+  observer,
+  on
+} = Ember;
+
+export default Component.extend(VelocityMixin, {
   width: '100px',
-  widthObserver: function() {
+  updateWidth: observer('width', on('didInserElement', function() {
     this.css('width', this.get('width'));
-  }.observes('width').on('didInsertElement')
+  }))
 });
-
 ```
 
 ### Animation with Promises
 
-```javascript
+```js
 import VelocityMixin from 'ember-velocity-mixin/main';
+import Ember from 'ember';
 
-export default Ember.Component.extend({
+const {
+  Component
+} = Ember;
+
+export default Component.extend({
   actions: {
-    collapse: function() {
-      var _this = this;
-      this.animate({ width: 0 }).then(function(){
-        _this.set('isCollapsed', true);
-      });
+    collapse() {
+      this.animate({ width: 0 })
+        .then(() => { this.set('isCollapsed', true); });
     }
   }
 });
@@ -46,18 +60,3 @@ similar to jQuery's css function but it's scoped to View's element and provides 
 
 ```animate``` method allows you to execute Velocity animation on current view or a given element. It accepts the same arguments as jQuery animation function. 
 This method returns a promise. Learn more about [Promises with Velocity](http://julian.com/research/velocity/#promises). 
-
-## Installation
-
-* `npm install ember-velocity-mixin --save`
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
