@@ -67,10 +67,10 @@
     "ember-export-application-global": "^1.0.4",
     "ember-try": "~0.0.8",
     "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "ember-cli-velocity": "^0.4.0"
   },
   "dependencies": {
-    "ember-cli-velocity": "^0.2.5",
     "ember-cli-babel": "^5.1.5"
   }
 }
