@@ -23,7 +23,7 @@ const {
 
 export default Component.extend(VelocityMixin, {
   width: '100px',
-  updateWidth: observer('width', on('didInserElement', function() {
+  updateWidth: observer('width', on('didInsertElement', function() {
     this.css('width', this.get('width'));
   }))
 });
