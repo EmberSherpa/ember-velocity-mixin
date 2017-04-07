@@ -39,7 +39,7 @@ const {
   Component
 } = Ember;
 
-export default Component.extend({
+export default Component.extend(VelocityMixin, {
   actions: {
     collapse() {
       this.animate({ width: 0 })
